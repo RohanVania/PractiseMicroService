@@ -8,7 +8,7 @@ function PostList() {
     const [posts, setPost] = useState({});
 
     const fetchPosts = async () => {
-        const result = await axios.get('http://localhost:4000/posts')
+        const result = await axios.get('http://localhost:4002/posts')
 
         setPost(result.data)
     }
@@ -19,6 +19,7 @@ function PostList() {
     }, [])
 
     const Allpost = Object.values(posts);
+    console.log(Allpost)
 
     return (
         <div className='grid-post-list tw-justify-around tw-gap-y-8'>

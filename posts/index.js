@@ -41,7 +41,7 @@ app.get('/posts', (req, res) => {
 })
 
 app.post('/events',(req,res)=>{
-    console.log("Event Receieved",req.body);
+    // console.log("Event Receieved",req.body);
     res.send({});
 })
 
