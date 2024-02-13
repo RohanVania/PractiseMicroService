@@ -19,13 +19,15 @@ app.post('/post', async (req, res) => {
         id: id,
         title: title
     }
-    await axios.post('http://localhost:5000/events',{
+    const result=await axios.post('http://localhost:5000/events',{
         type:'PostCreated-Event',
         data:{
             id:id,
             title:title
         }
     })
+
+    console.log(result)
     
     res.status(200).json({
         status:'Successfully',
@@ -36,6 +38,11 @@ app.post('/post', async (req, res) => {
 
 app.get('/posts', (req, res) => {
     res.send(posts)
+})
+
+app.post('/events',(req,res)=>{
+    console.log("Event Receieved",req.body);
+    res.send({});
 })
 
 app.listen(port, () => {
