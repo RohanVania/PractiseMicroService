@@ -14,8 +14,8 @@ app.post('/events',async(req,res)=>{
 
         await axios.post('http://localhost:4000/events',data); //*Post Service
         await axios.post('http://localhost:4001/events',data); //* Comment Service
-        await axios.post('http://localhost:4003/events',data) //* Moderation Service
         await axios.post('http://localhost:4002/events',data); //* Query Service
+        await axios.post('http://localhost:4003/events',data) //* Moderation Service
     }catch(err){
         console.log('Its ok for error',err.message)
     }
